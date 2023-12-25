@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" id="lang">
+
+<head>
+    <title>PMTC</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <ul id="nav">
+            <li><button id="productList" data-target="pageProductList">all products</button></li>
+            <li id="hello"> </li>
+            <li><button id="exit" data-target="entrance">exit</button></li>
+            <li><button id="newSearch" data-target="homePage"><i class="fa-solid fa-house"></i></button></li>
+            <div id="divProductPlace">
+                <ul id="listProductPlace">
+                </ul>
+                <h5 id="close">x</h6>
+            </div>
+
+        </ul>
+    </nav>
+    <main>
+        <template id="entrance">
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#" id="signup" autocomplete="on">
+                        <h1>create account</h1>
+                        <input id="nameL" type="text" placeholder="name" required />
+                        <input id="emailL" type="email" placeholder="email" required />
+                        <input id="passwordL" type="password" placeholder="password" required />
+                        <button id="logInButton" type="submit" data-target="homePage">signup</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#" id="login" autocomplete="on">
+                        <h1>connect</h1>
+                        <input id="emailS" type="email" placeholder="email" required />
+                        <input id="passwordS" type="password" placeholder="password" required />
+                        <a href="#">forgat password?</a>
+                        <button id="signUpButton" type="submit" data-target="homePage">login</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+
+                            <h1> To enter the site, user information must be entered<h1>
+                                    <br>
+                                    <button class="ghost" id="signIn">connect</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+
+                            <h1>Not connected to us yet? Register here!<h1>
+                                    <br>
+                                    <button class="ghost" id="signUp">registrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template id="homePage">
+            <div id="homePageButtons">
+                <button id="productUpdate" class="btnaction" data-target="pageProductUpdate">update product</button>
+                <button id="productdeletion" class="btnaction" data-target="pageProductdeletion">delete product</button>
+                <button id="addungAProduct" class="btnaction" data-target="pageAddungAProduct">add product</button>
+                <button id="productSearch" class="btnaction" data-target="pageProductSearch">search product</button>
+            </div>
+        </template>
+
+
+        <template id="pageProductUpdate">
+            <form action="" class="actionPage">
+                <label for="productName">choosen product: <h3 id="productText"><br></h3></label>
+                <div id="productText"></div>
+                <input id="productName" name="productName" type="hidden" value="">
+                <label for="updateQuantity">Update Quantity:</label>
+                <input id="updateQuantity" name="updateQuantity" type="number">
+                <label for="updatePrice">Update price:</label>
+                <input id="updatePrice" name="updatePrice" type="number">
+                <button type="button" id="updatebtn">update</button>
+            </form>
+        </template>
+
+
+        <template id="pageProductdeletion">
+            <form class="actionPage">
+                <label for="productName">choosen product: <h3 id="productText"><br></h3></label>
+                <input id="productName" name="productName" type="hidden" value="">
+                <button type="submit" id="deletebtn">delete</button>
+            </form>
+        </template>
+
+        <template id="pageAddungAProduct">
+            <form action="" class="actionPage">
+                <label for="addName">ptoduct name:</label>
+                <input type="text" id="addName" name="addName">
+                <label for="addPrice">price:</label>
+                <input type="number" id="addPrice" name="addPrice">
+                <label for="addMinimumAmount">minimum amount:</label>
+                <input type="number" id="addMinimumAmount" name="addMinimumAmount">
+                <label for="addQuntityInWerehouse">quntity in werehouse:</label>
+                <input type="number" id="addQuntityInWerehouse" name="addQuntityInWerehouse">
+                <label for="addProductDescription">description:</label>
+                <input type="text" id="addProductDescription" name="addProductDescription">
+                <button type="submit" data-target="homePage" id="addbtn">submit</button>
+            </form>
+        </template>
+
+        <template id="pageProductSearch">
+            <div class="actionPage">
+                <form id="searchInput" action="">
+                    <label for="ptoductName">ptoduct name:</label>
+                    <input type="text" id="ptoductName" name="ptoductName" value="">
+                    <button type="submit" id="searchbtn">look for me</button>
+                </form>
+                <div id="found"></div>
+                <div id="notFound">product not found</div>
+            </div>
+        </template>
+    </main>
+    <script src="../js/netWork.js"> </script>
+    <script src="../js/data_base.js"></script>
+    <script src="../js/server.js"> </script>
+    <script src="../js/fajax.js"></script>
+
+    <script src="../js/client.js"></script>
+
+</body>
+
+</html>
